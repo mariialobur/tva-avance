@@ -36,7 +36,7 @@ test('mobile selector reaches the final control dossier and keeps the TVA form v
   await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon');
   await expect(page.locator('#sidebar')).toContainText('grand livre, corrections et concordance');
   await expect(page.locator('input[data-field="ch200"]')).toBeVisible();
-  await expect(page.getByText('Vue pédagogique du décompte')).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Décompte pédagogique — méthode effective'})).toBeVisible();
 });
 
 test('memo exposes professional-control topics',async({page})=>{

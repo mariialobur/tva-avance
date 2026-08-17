@@ -65,16 +65,20 @@ test('workbar previous/next and selector reach the professional dossiers',async(
   await expect(page.locator('#uxNextCase')).toBeDisabled();
 });
 
-test('mobile compact dossier controls and sticky verify keep the final control dossier usable',async({page})=>{
+test('mobile Verify becomes sticky only after the original advanced action is scrolled past',async({page})=>{
   await page.setViewportSize({width:390,height:844});
   await clean(page);
   await expect(page.locator('#uxWorkbar')).toBeVisible();
   await expect(page.locator('#caseSelect')).toBeVisible();
-  await expect(page.locator('#uxMobileVerify')).toBeVisible();
   await expect(page.locator('.ux-sidebar-toggle')).toBeVisible();
+  await expect(page.locator('#sidebar .case-nav')).toBeHidden();
+  await expect(page.locator('#uxMobileVerify')).toBeHidden();
   await page.locator('#caseSelect').selectOption('17');
   await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon');
   await expect(page.locator('#sidebar')).toContainText('grand livre, corrections et concordance');
+  await page.locator('#form').scrollIntoViewIfNeeded();
+  await page.evaluate(()=>window.scrollBy(0,250));
+  await expect(page.locator('#uxMobileVerify')).toBeVisible();
   await expect(page.locator('input[data-field="ch200"]')).toBeVisible();
   await expect(page.getByRole('heading',{name:'Décompte pédagogique — méthode effective'})).toBeVisible();
 });

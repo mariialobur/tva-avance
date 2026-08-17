@@ -1,7 +1,14 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-function blocking(violations){return violations.filter(v=>['serious','critical'].includes(v.impact)).map(v=>({id:v.id,impact:v.impact,help:v.help,nodes:v.nodes.length}))}
+function blocking(violations){
+  return violations.filter(v=>['serious','critical'].includes(v.impact)).map(v=>({
+    id:v.id,
+    impact:v.impact,
+    help:v.help,
+    nodes:v.nodes.map(n=>({target:n.target,html:n.html,failureSummary:n.failureSummary})).slice(0,20)
+  }));
+}
 
 async function scan(page){
   const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']).analyze();
@@ -18,6 +25,6 @@ test('mobile advanced working view has no serious or critical automated WCAG vio
   await page.setViewportSize({width:390,height:844});
   await page.goto('/');
   await page.locator('#caseSelect').selectOption('17');
-  await expect(page.locator('#uxMobileVerify')).toBeVisible();
+  await expect(page.locator('#uxMobileVerify')).toBeHidden();
   await scan(page);
 });

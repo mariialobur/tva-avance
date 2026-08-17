@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TVA Suisse — Simulateur Avancé Pro v13 · @MariiaLobur</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="hdr">
+    <div class="hdr-l">
+      <div class="hdr-badge">&#127464;&#127469; AFC &#8212; Administration f&#233;d&#233;rale des contributions</div>
+      <h1>Simulateur de décompte TVA suisse — <span class="hdr-mode">🧠 MODE AVANCÉ</span></h1>
+      <p>Méthode effective avancée · Taux depuis 01.01.2024 · Reverse charge, pro-rata, subventions, groupe TVA, TDFN · Contrôle annuel</p>
+    </div>
+    <div class="hdr-r">
+      <div>Progression globale</div>
+      <div class="hdr-prog" id="hProg">0 / 9 cas</div>
+      <div class="hdr-author">&#169; 2026 @MariiaLobur</div>
+    </div>
+  </header>
+  <div class="guide compact" aria-label="Mode d'emploi compact avancé">
+    <div class="guide-steps">
+      <div class="gs"><span class="gs-n">1</span>Qualifiez l’opération</div>
+      <div class="gs"><span class="gs-n">2</span>Saisissez les montants HT</div>
+      <div class="gs"><span class="gs-n">3</span>Contrôlez IP, justificatifs et risques TVA</div>
+      <div class="gs"><span class="gs-n">4</span>Finalisez avec la concordance annuelle</div>
+    </div>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div class="main">
+    <aside class="sb" id="sb"></aside>
+    <div class="fa" id="fa">
+      <div id="formWrap"></div>
+      <div id="rectWrap"></div>
+      <div id="resWrap"></div>
+    </div>
+  </div>
+</div>
+
+<div class="learning-footer" aria-label="Aide avancée, glossaire et limites du simulateur">
+  <details class="support-details">
+    <summary>Glossaire avancé TVA</summary>
+    <div class="gloss">
+      <div class="gt"><span class="gk">Reverse charge</span><span class="gv">= acquisition de services étrangers à auto-imposer puis, si admis, à récupérer.</span></div>
+      <div class="gt"><span class="gk">Pro-rata IP</span><span class="gv">= correction de l’impôt préalable lorsque l’activité est mixte.</span></div>
+      <div class="gt"><span class="gk">Subvention</span><span class="gv">= peut réduire l’IP sans constituer automatiquement une contre-prestation.</span></div>
+      <div class="gt"><span class="gk">TDFN</span><span class="gv">= méthode séparée: CA TVA comprise × taux AFC applicable.</span></div>
+      <div class="gt"><span class="gk">Concordance</span><span class="gv">= contrôle entre décomptes TVA et comptes annuels.</span></div>
+      <div class="gt"><span class="gk">Montants</span><span class="gv">= CHF HT, sauf indication contraire pour TDFN.</span></div>
+    </div>
+  </details>
+  <details class="support-details">
+    <summary>Parcours Avancé Pro</summary>
+    <div class="learnmap" aria-label="Parcours pédagogique avancé">
+      <div class="lm-title">Parcours</div>
+      <div class="lm-item"><strong>1</strong><span>Qualifier les opérations complexes: étranger, exclusions, immobilier, groupe TVA.</span></div>
+      <div class="lm-item"><strong>2</strong><span>Corriger l’IP: pro-rata, subventions, activité exclue, usage réel.</span></div>
+      <div class="lm-item"><strong>3</strong><span>Préparer un dossier défendable: preuves, contrats, décisions, pièces comptables.</span></div>
+      <div class="lm-item"><strong>4</strong><span>Contrôler la concordance annuelle avant correction ou dépôt.</span></div>
+    </div>
+  </details>
+  <details class="support-details">
+    <summary>Limites pédagogiques et dépôt officiel AFC</summary>
+    <div class="legal-disclaimer">
+      <strong>Note pédagogique importante:</strong> ce simulateur avancé simplifie certaines rubriques du Formulaire 100 pour apprendre les réflexes professionnels. Le vrai dépôt doit toujours être effectué dans l’ePortal AFC selon le formulaire, les instructions et la pratique en vigueur. Les cas ne remplacent pas une analyse TVA complète par un comptable/fiscaliste responsable.
+    </div>
+  </details>
+</div>
+
+<script src="cases.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

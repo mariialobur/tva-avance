@@ -19,6 +19,32 @@ test('desktop: Level 2 exposes all 18 dossiers and locks the final exam initiall
   await expect(page.locator('#finalEvaluation')).toContainText('Progression: 0/18');
 });
 
+test('controlled SaaS variants break the foreign-provider equals ch383 reflex without changing 18-case progression',async({page})=>{
+  await clean(page);
+  const panel=page.locator('#controlledVariantsA');
+  await expect(panel).toBeVisible();
+  await expect(panel).toContainText('Fournisseur étranger ≠ automatiquement ch. 383');
+  await panel.locator('input[name="cv-AA"][value="0"]').check();
+  await panel.getByRole('button',{name:'Vérifier la variante'}).click();
+  await expect(panel).toContainText('1/3');
+  await panel.getByRole('tab',{name:/A-B/}).click();
+  await panel.locator('input[name="cv-AB"][value="1"]').check();
+  await panel.getByRole('button',{name:'Vérifier la variante'}).click();
+  await expect(panel).toContainText('2/3');
+  await panel.getByRole('tab',{name:/A-C/}).click();
+  await panel.locator('input[name="cv-AC"][value="1"]').check();
+  await panel.getByRole('button',{name:'Vérifier la variante'}).click();
+  await expect(panel).toContainText('3/3');
+  await expect(page.locator('#globalProgress')).toContainText('0 / 18');
+});
+
+test('controlled SaaS variants are hidden during scored evaluation mode',async({page})=>{
+  await clean(page);
+  await expect(page.locator('#controlledVariantsA')).toBeVisible();
+  await page.locator('[data-mode="evaluate"]').click();
+  await expect(page.locator('#controlledVariantsA')).toHaveCount(0);
+});
+
 test('desktop navigation reaches the new professional dossiers',async({page})=>{
   await clean(page);
   const tabs=page.locator('#tabs button');

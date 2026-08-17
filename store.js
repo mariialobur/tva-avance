@@ -1,6 +1,7 @@
 import './level2-extension.js';
 import './legal-audit-2026-08.js';
 import './hardening.js';
+import './level2-version.js';
 
 const STORAGE_KEY='tva_avance_v1_state';
 const DEFAULT_STATE={version:1,caseIndex:0,view:'guided',mode:'learn',records:{},drafts:{}};

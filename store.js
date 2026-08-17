@@ -1,3 +1,4 @@
+import './level2-extension.js';
 import './legal-audit-2026-08.js';
 import './hardening.js';
 

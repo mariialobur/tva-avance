@@ -1,3 +1,4 @@
+import './ux-v3.js';
 import { CASES } from './data.js';
 
 const STORAGE_KEY='tva_avance_case_a_variants_v1';

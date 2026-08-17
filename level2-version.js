@@ -6,6 +6,8 @@ const ATTEST_TEXT=`Version du parcours ${VERSION} · sources principales contrô
 function patchVersion(){
   const footer=document.querySelector('footer span');
   if(footer&&footer.textContent!==FOOTER_TEXT) footer.textContent=FOOTER_TEXT;
+  const progress=document.querySelector('#globalProgress');
+  if(progress&&/cas$/.test(progress.textContent)) progress.textContent=progress.textContent.replace(/cas$/,'dossiers');
   document.querySelectorAll('#attestationLayer .attest-version').forEach(p=>{if(p.textContent!==ATTEST_TEXT)p.textContent=ATTEST_TEXT});
 }
 

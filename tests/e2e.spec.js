@@ -10,10 +10,10 @@ test('loads the 18-dossier Level 2 parcours',async({page})=>{
 });
 
 test('can navigate to the new professional dossiers',async({page})=>{
-  await page.locator('#caseSelect').selectOption({label:/Grand livre/});
-  await expect(page.locator('#caseInfo')).toContainText('Alpina Distribution');
-  await page.locator('#caseSelect').selectOption({label:/Contrôle annuel complet/});
-  await expect(page.locator('#caseInfo')).toContainText('Fiduciaire Horizon');
+  await page.locator('#caseSelect').selectOption('9');
+  await expect(page.locator('#sidebar')).toContainText('Alpina Distribution');
+  await page.locator('#caseSelect').selectOption('17');
+  await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon');
 });
 
 test('memo exposes professional-control topics',async({page})=>{

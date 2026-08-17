@@ -6,7 +6,16 @@ const masteredRecords=count=>Object.fromEntries(ids.slice(0,count).map(id=>[id,{
 async function clean(page){await page.goto('/');await page.evaluate(()=>localStorage.clear());await page.reload()}
 
 test('desktop: Level 2 exposes 18 dossiers through the scalable workbar and locks the final exam initially',async({page})=>{
-  await clean(page);await expect(page.getByRole('heading',{name:'TVA suisse — méthode effective'})).toBeVisible();await expect(page.locator('.brand p')).toContainText('Niveau 2 · Pratique fiduciaire avancée');await expect(page.locator('#globalProgress')).toContainText('0 / 18');await expect(page.locator('#tabs button')).toHaveCount(18);await expect(page.locator('#tabs')).toBeHidden();await expect(page.locator('#uxWorkbar')).toBeVisible();await expect(page.locator('#caseSelect')).toBeVisible();await expect(page.locator('#caseSelect option')).toHaveCount(18);await expect(page.locator('#uxCaseCount')).toContainText('1 / 18');await expect(page.getByRole('button',{name:'Rubriques utiles'})).toBeVisible();await expect(page.locator('#startFinal')).toBeDisabled();await expect(page.locator('#finalEvaluation')).toContainText('Progression: 0/18')
+  await clean(page);await expect(page.getByRole('heading',{name:'TVA suisse — méthode effective'})).toBeVisible();await expect(page.locator('.brand p')).toContainText('Niveau 2 · Pratique fiduciaire avancée');await expect(page.locator('#globalProgress')).toContainText('0 / 18');await expect(page.locator('#tabs button')).toHaveCount(18);await expect(page.locator('#tabs')).toBeHidden();await expect(page.locator('#uxWorkbar')).toBeVisible();await expect(page.locator('#caseSelect')).toBeVisible();await expect(page.locator('#caseSelect option')).toHaveCount(18);await expect(page.locator('#uxCaseCount')).toContainText('1 / 18');await expect(page.locator('#uxLevelPlanOpen')).toBeVisible();await expect(page.getByRole('button',{name:'Rubriques utiles'})).toBeVisible();await expect(page.locator('#startFinal')).toBeDisabled();await expect(page.locator('#finalEvaluation')).toContainText('Progression: 0/18')
+});
+
+test('Plan du niveau groups all 18 dossiers, reflects progress and opens a chosen dossier',async({page})=>{
+  await clean(page);
+  await page.evaluate(()=>localStorage.setItem('tva_avance_v1_state',JSON.stringify({records:{A:{bestEvaluationScore:100},B:{practiceAttempts:1}},drafts:{}})));
+  await page.locator('#uxLevelPlanOpen').click();
+  const dialog=page.getByRole('dialog',{name:'Plan du niveau'});
+  await expect(dialog).toBeVisible();await expect(dialog).toContainText('1/18 maîtrisés');await expect(dialog.locator('[data-plan-case-index]')).toHaveCount(18);await expect(dialog.getByText('International, immobilier & financements',{exact:true})).toBeVisible();await expect(dialog.getByText('Contrôle, valeur & clôture',{exact:true})).toBeVisible();await expect(dialog.getByText('Maîtrisé ✓',{exact:true})).toHaveCount(1);await expect(dialog.getByText('En cours',{exact:true})).toHaveCount(1);
+  await dialog.locator('[data-plan-case-index="17"]').click();await expect(dialog).toBeHidden();await expect(page.locator('#uxCaseCount')).toContainText('18 / 18');await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon')
 });
 
 test('controlled SaaS variants stay compact by default, break the foreign-provider equals ch383 reflex and do not change 18-case progression',async({page})=>{

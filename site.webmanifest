@@ -1,6 +1,8 @@
 {
-  "name":"TVA suisse — pratique avancée",
-  "short_name":"TVA Avancé",
+  "name":"TVA suisse — méthode effective · Niveau 2",
+  "short_name":"TVA Effective N2",
+  "description":"Parcours pédagogique indépendant de 18 dossiers avancés sur la TVA suisse selon la méthode effective.",
+  "lang":"fr-CH",
   "start_url":"./",
   "display":"standalone",
   "background_color":"#f2f3f1",

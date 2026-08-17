@@ -1,0 +1,13 @@
+{
+  "name":"tva-effective-advanced",
+  "version":"2.0.0",
+  "private":true,
+  "type":"module",
+  "scripts":{
+    "test:smoke":"node tests/smoke.mjs",
+    "test:unit":"node tests/unit.mjs && node tests/evaluation.mjs",
+    "test:e2e":"playwright test",
+    "test":"npm run test:smoke && npm run test:unit && npm run test:e2e"
+  },
+  "devDependencies":{"@playwright/test":"^1.55.0"}
+}

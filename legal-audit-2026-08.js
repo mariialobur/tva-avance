@@ -39,6 +39,7 @@ const byId=id=>CASES.find(c=>c.id===id);
     c.legal='Art. 18, al. 2, let. a et al. 3, et art. 33, al. 2, LTVA; art. 29 OTVA; prototype AFC ch. 900 et ch. 420.';
     c.qualification.explain='Les collectivités publiques ont expressément désigné les fonds comme subventions / contributions de droit public; l’art. 18, al. 3, LTVA est donc déterminant dans le scénario.';
     c.checks[3]='Conserver les décisions / communications des collectivités publiques établissant la désignation expresse des fonds; ne pas transposer ce traitement à un financement privé ou à une contre-prestation commerciale.';
+    if(!c.sourceKeys.includes('ordinance')) c.sourceKeys.push('ordinance');
   }
 }
 
@@ -70,7 +71,7 @@ const byId=id=>CASES.find(c=>c.id===id);
 {
   const c=byId('I');
   if(c){
-    c.task='À partir des écarts détectés lors du bouclement, reconstituez l’état corrigé servant au rapprochement. <strong>Attention:</strong> ces totaux pédagogiques ne sont pas à recopier tels quels dans le formulaire de concordance annuelle; seules les différences par rapport aux décomptes déjà remis y sont déclarées.';
+    c.task='À partir des écarts détectés lors du bouclement, reconstituez l’état corrigé servant au rapprochement. Attention: ces totaux pédagogiques ne sont pas à recopier tels quels dans le formulaire de concordance annuelle; seules les différences par rapport aux décomptes déjà remis y sont déclarées.';
     c.info='L’AFC exige une <strong>concordance annuelle</strong> entre les décomptes et les comptes annuels. Le tableau de cet exercice reconstitue d’abord l’<strong>état corrigé complet</strong> afin de contrôler le dossier. Dans le formulaire de concordance annuelle au sens de l’art. 72 LTVA, seules les différences constatées par rapport aux décomptes déjà remis sont déclarées. Une erreur isolée d’une période mensuelle, trimestrielle ou semestrielle se corrige au moyen du décompte rectificatif de la période concernée.';
     c.facts[4]=['IP sur charges à double affectation — part non déductible identifiée au bouclement',5300,'ch. 415'];
     c.legal='Art. 30 et 72 LTVA; concordance annuelle, décompte rectificatif et dossier de contrôle.';

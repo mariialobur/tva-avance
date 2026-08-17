@@ -1,3 +1,5 @@
+import './hardening.js';
+
 const STORAGE_KEY='tva_avance_v1_state';
 const DEFAULT_STATE={version:1,caseIndex:0,view:'guided',mode:'learn',records:{},drafts:{}};
 function safeGet(k){try{return localStorage.getItem(k)}catch{return null}}

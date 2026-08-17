@@ -9,12 +9,16 @@ async function clean(page){
   await page.reload();
 }
 
-test('desktop: Level 2 exposes all 18 dossiers and locks the final exam initially',async({page})=>{
+test('desktop: Level 2 exposes 18 dossiers through the scalable workbar and locks the final exam initially',async({page})=>{
   await clean(page);
   await expect(page.getByRole('heading',{name:'TVA suisse — pratique avancée'})).toBeVisible();
   await expect(page.locator('#globalProgress')).toContainText('0 / 18');
-  await expect(page.locator('#caseSelect option')).toHaveCount(18);
   await expect(page.locator('#tabs button')).toHaveCount(18);
+  await expect(page.locator('#tabs')).toBeHidden();
+  await expect(page.locator('#uxWorkbar')).toBeVisible();
+  await expect(page.locator('#caseSelect')).toBeVisible();
+  await expect(page.locator('#caseSelect option')).toHaveCount(18);
+  await expect(page.locator('#uxCaseCount')).toContainText('1 / 18');
   await expect(page.locator('#startFinal')).toBeDisabled();
   await expect(page.locator('#finalEvaluation')).toContainText('Progression: 0/18');
 });
@@ -45,18 +49,24 @@ test('controlled SaaS variants are hidden during scored evaluation mode',async({
   await expect(page.locator('#controlledVariantsA')).toHaveCount(0);
 });
 
-test('desktop navigation reaches the new professional dossiers',async({page})=>{
+test('workbar previous/next and selector reach the professional dossiers',async({page})=>{
   await clean(page);
-  const tabs=page.locator('#tabs button');
-  await tabs.nth(9).click();
+  await page.locator('#uxNextCase').click();
+  await expect(page.locator('#uxCaseCount')).toContainText('2 / 18');
+  await expect(page.locator('#sidebar')).toContainText('ImmoDev SA');
+  await page.locator('#caseSelect').selectOption('9');
   await expect(page.locator('#sidebar')).toContainText('Alpina Distribution');
-  await tabs.nth(17).click();
+  await expect(page.locator('#uxCaseCount')).toContainText('10 / 18');
+  await page.locator('#caseSelect').selectOption('17');
   await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon');
+  await expect(page.locator('#uxCaseCount')).toContainText('18 / 18');
+  await expect(page.locator('#uxNextCase')).toBeDisabled();
 });
 
-test('mobile selector reaches the final control dossier and keeps the TVA form visible',async({page})=>{
+test('mobile sticky workbar reaches the final control dossier and keeps the TVA form visible',async({page})=>{
   await page.setViewportSize({width:390,height:844});
   await clean(page);
+  await expect(page.locator('#uxWorkbar')).toBeVisible();
   await expect(page.locator('#caseSelect')).toBeVisible();
   await page.locator('#caseSelect').selectOption('17');
   await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon');

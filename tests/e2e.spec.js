@@ -34,7 +34,7 @@ test('mobile selector reaches the final control dossier and keeps the TVA form v
   await expect(page.locator('#caseSelect')).toBeVisible();
   await page.locator('#caseSelect').selectOption('17');
   await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon');
-  await expect(page.locator('#sidebar')).toContainText('Contrôle annuel complet');
+  await expect(page.locator('#sidebar')).toContainText('grand livre, corrections et concordance');
   await expect(page.locator('input[data-field="ch200"]')).toBeVisible();
   await expect(page.getByText('Vue pédagogique du décompte')).toBeVisible();
 });

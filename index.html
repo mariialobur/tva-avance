@@ -1,87 +1,117 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-CH">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TVA Suisse — Simulateur Avancé Pro v13 · @MariiaLobur</title>
-<link rel="stylesheet" href="styles-base.css">
-<link rel="stylesheet" href="styles-responsive.css">
+<meta name="theme-color" content="#111318">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Mariia Lobur">
+<meta name="description" content="Entraînement pédagogique avancé à la TVA suisse: opérations internationales, impôt préalable, activités mixtes, subventions, groupe TVA, changements de méthode et concordance annuelle.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:site_name" content="Outils TVA suisse — Mariia Lobur">
+<meta property="og:title" content="TVA suisse — pratique avancée · méthode effective">
+<meta property="og:description" content="Parcours avancé de TVA suisse orienté pratique fiduciaire, qualification des opérations, contrôles et concordance.">
+<meta property="og:url" content="https://mariialobur.github.io/tva-avance/">
+<link rel="canonical" href="https://mariialobur.github.io/tva-avance/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles-base.css?v=0.2.0">
+<link rel="stylesheet" href="styles-responsive.css?v=0.2.0">
+<link rel="stylesheet" href="patch.css?v=0.2.0">
+<title>TVA suisse — pratique avancée · méthode effective | Mariia Lobur</title>
 </head>
 <body>
+<a class="skip-link" href="#workspace">Aller au contenu principal</a>
 <div id="app">
   <header class="hdr">
     <div class="hdr-l">
-      <div class="hdr-badge">&#127464;&#127469; AFC &#8212; Administration f&#233;d&#233;rale des contributions</div>
-      <h1>Simulateur de décompte TVA suisse — <span class="hdr-mode">🧠 MODE AVANCÉ</span></h1>
-      <p>Méthode effective avancée · Taux depuis 01.01.2024 · Reverse charge, pro-rata, subventions, groupe TVA, TDFN · Contrôle annuel</p>
+      <div class="hdr-badge">🇨🇭 TVA suisse · projet pédagogique indépendant</div>
+      <h1>Pratique avancée du décompte TVA suisse — <span class="hdr-mode">NIVEAU AVANCÉ</span></h1>
+      <p>Méthode effective · opérations internationales · impôt préalable · activités mixtes · concordance et contrôle du dossier</p>
     </div>
     <div class="hdr-r">
       <div>Progression globale</div>
       <div class="hdr-prog" id="hProg">0 / 9 cas</div>
-      <div class="hdr-author">&#169; 2026 @MariiaLobur</div>
+      <div class="hdr-author">© 2026 Mariia Lobur</div>
     </div>
   </header>
-  <div class="guide compact" aria-label="Mode d'emploi compact avancé">
+
+  <nav class="project-nav" aria-label="Parcours TVA suisse">
+    <a href="https://mariialobur.github.io/tva-debutant/">01 · Méthode effective</a>
+    <a class="active" href="./" aria-current="page">02 · Pratique avancée</a>
+    <a href="https://mariialobur.github.io/tva-tdfn/">Spécialisation · TDFN</a>
+    <a class="linkedin" href="https://www.linkedin.com/in/mariia-lobur/" target="_blank" rel="noopener noreferrer">Mariia Lobur ↗</a>
+  </nav>
+
+  <div class="review-banner" role="status">
+    <strong>Version de développement — révision fiscale en cours.</strong>
+    <span>La structure du décompte et plusieurs cas sont en cours d’alignement sur le modèle AFC actuel. Cette version ne doit pas être utilisée comme référence pour un décompte réel.</span>
+  </div>
+
+  <div class="legal-top">
+    <strong>Projet pédagogique indépendant.</strong> Cet outil n’est ni un service de l’AFC, ni un formulaire officiel, ni un avis fiscal. La remise réelle des décomptes s’effectue via «Décompte TVA pro» sur le Portail AFC.
+  </div>
+
+  <div class="guide compact" aria-label="Méthode de travail avancée">
     <div class="guide-steps">
-      <div class="gs"><span class="gs-n">1</span>Qualifiez l’opération</div>
-      <div class="gs"><span class="gs-n">2</span>Saisissez les montants HT</div>
-      <div class="gs"><span class="gs-n">3</span>Contrôlez IP, justificatifs et risques TVA</div>
-      <div class="gs"><span class="gs-n">4</span>Finalisez avec la concordance annuelle</div>
+      <div class="gs"><span class="gs-n">1</span>Qualifier l’opération</div>
+      <div class="gs"><span class="gs-n">2</span>Choisir la rubrique</div>
+      <div class="gs"><span class="gs-n">3</span>Contrôler IP et justificatifs</div>
+      <div class="gs"><span class="gs-n">4</span>Réconcilier et documenter</div>
     </div>
   </div>
   <div class="tabs" id="tabs"></div>
-  <div class="main">
+  <main class="main" id="workspace">
     <aside class="sb" id="sb"></aside>
-    <div class="fa" id="fa">
+    <section class="fa" id="fa">
       <div id="formWrap"></div>
       <div id="rectWrap"></div>
-      <div id="resWrap"></div>
-    </div>
-  </div>
+      <div id="resWrap" aria-live="polite"></div>
+    </section>
+  </main>
 </div>
 
 <div class="learning-footer" aria-label="Aide avancée, glossaire et limites du simulateur">
   <details class="support-details">
     <summary>Glossaire avancé TVA</summary>
     <div class="gloss">
-      <div class="gt"><span class="gk">Reverse charge</span><span class="gv">= acquisition de services étrangers à auto-imposer puis, si admis, à récupérer.</span></div>
-      <div class="gt"><span class="gk">Pro-rata IP</span><span class="gv">= correction de l’impôt préalable lorsque l’activité est mixte.</span></div>
-      <div class="gt"><span class="gk">Subvention</span><span class="gv">= peut réduire l’IP sans constituer automatiquement une contre-prestation.</span></div>
-      <div class="gt"><span class="gk">TDFN</span><span class="gv">= méthode séparée: CA TVA comprise × taux AFC applicable.</span></div>
-      <div class="gt"><span class="gk">Concordance</span><span class="gv">= contrôle entre décomptes TVA et comptes annuels.</span></div>
-      <div class="gt"><span class="gk">Montants</span><span class="gv">= CHF HT, sauf indication contraire pour TDFN.</span></div>
+      <div class="gt"><span class="gk">Impôt sur les acquisitions</span><span class="gv">= imposition de certaines acquisitions auprès d’entreprises étrangères selon les conditions applicables.</span></div>
+      <div class="gt"><span class="gk">Double affectation</span><span class="gv">= utilisation de prestations préalables pour des activités ouvrant et n’ouvrant pas le même droit à déduction.</span></div>
+      <div class="gt"><span class="gk">Subvention</span><span class="gv">= financement à qualifier séparément d’une contre-prestation; peut entraîner une réduction de l’impôt préalable.</span></div>
+      <div class="gt"><span class="gk">Concordance</span><span class="gv">= rapprochement entre comptabilité, décomptes TVA et justificatifs.</span></div>
     </div>
   </details>
   <details class="support-details">
-    <summary>Parcours Avancé Pro</summary>
+    <summary>Parcours avancé</summary>
     <div class="learnmap" aria-label="Parcours pédagogique avancé">
       <div class="lm-title">Parcours</div>
-      <div class="lm-item"><strong>1</strong><span>Qualifier les opérations complexes: étranger, exclusions, immobilier, groupe TVA.</span></div>
-      <div class="lm-item"><strong>2</strong><span>Corriger l’IP: pro-rata, subventions, activité exclue, usage réel.</span></div>
-      <div class="lm-item"><strong>3</strong><span>Préparer un dossier défendable: preuves, contrats, décisions, pièces comptables.</span></div>
-      <div class="lm-item"><strong>4</strong><span>Contrôler la concordance annuelle avant correction ou dépôt.</span></div>
+      <div class="lm-item"><strong>1</strong><span>Qualifier les opérations complexes: étranger, exclusions, immobilier et groupe TVA.</span></div>
+      <div class="lm-item"><strong>2</strong><span>Analyser l’impôt préalable: affectation, corrections, réductions et changement de méthode.</span></div>
+      <div class="lm-item"><strong>3</strong><span>Préparer un dossier défendable: contrats, factures, décisions, calculs et pièces de contrôle.</span></div>
+      <div class="lm-item"><strong>4</strong><span>Effectuer la concordance et identifier la bonne procédure de correction avant remise.</span></div>
     </div>
   </details>
   <details class="support-details">
-    <summary>Limites pédagogiques et dépôt officiel AFC</summary>
+    <summary>Limites pédagogiques et remise officielle</summary>
     <div class="legal-disclaimer">
-      <strong>Note pédagogique importante:</strong> ce simulateur avancé simplifie certaines rubriques du Formulaire 100 pour apprendre les réflexes professionnels. Le vrai dépôt doit toujours être effectué dans l’ePortal AFC selon le formulaire, les instructions et la pratique en vigueur. Les cas ne remplacent pas une analyse TVA complète par un comptable/fiscaliste responsable.
+      <strong>Note pédagogique:</strong> les exercices servent à développer les réflexes de qualification et de contrôle. Pour un dossier réel, le formulaire, les instructions, la loi, les ordonnances et la pratique AFC en vigueur restent déterminants.
     </div>
   </details>
+  <footer class="site-footer">© 2026 Mariia Lobur · Projet de formation et de démonstration. <span>Révision fiscale de la version avancée en cours · 17.08.2026.</span></footer>
 </div>
 
-<script src="cases-core.js"></script>
-<script src="case-0.js"></script>
-<script src="case-1.js"></script>
-<script src="case-2.js"></script>
-<script src="case-3.js"></script>
-<script src="case-4.js"></script>
-<script src="case-5.js"></script>
-<script src="case-6.js"></script>
-<script src="case-7.js"></script>
-<script src="case-8.js"></script>
-<script src="app-core.js"></script>
-<script src="app-ui.js"></script>
-<script src="app-actions.js"></script>
+<script src="cases-core.js?v=0.2.0"></script>
+<script src="case-0.js?v=0.2.0"></script>
+<script src="case-1.js?v=0.2.0"></script>
+<script src="case-2.js?v=0.2.0"></script>
+<script src="case-3.js?v=0.2.0"></script>
+<script src="case-4.js?v=0.2.0"></script>
+<script src="case-5.js?v=0.2.0"></script>
+<script src="case-6.js?v=0.2.0"></script>
+<script src="case-7.js?v=0.2.0"></script>
+<script src="case-8.js?v=0.2.0"></script>
+<script src="app-core.js?v=0.2.0"></script>
+<script src="app-ui.js?v=0.2.0"></script>
+<script src="app-actions.js?v=0.2.0"></script>
 </body>
 </html>

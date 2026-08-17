@@ -10,9 +10,10 @@ test('loads the 18-dossier Level 2 parcours',async({page})=>{
 });
 
 test('can navigate to the new professional dossiers',async({page})=>{
-  await page.locator('#caseSelect').selectOption('9');
+  const tabs=page.locator('#tabs button');
+  await tabs.nth(9).click();
   await expect(page.locator('#sidebar')).toContainText('Alpina Distribution');
-  await page.locator('#caseSelect').selectOption('17');
+  await tabs.nth(17).click();
   await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon');
 });
 

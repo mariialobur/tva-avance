@@ -11,7 +11,8 @@ async function clean(page){
 
 test('desktop: Level 2 exposes 18 dossiers through the scalable workbar and locks the final exam initially',async({page})=>{
   await clean(page);
-  await expect(page.getByRole('heading',{name:'TVA suisse — pratique avancée'})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'TVA suisse — méthode effective'})).toBeVisible();
+  await expect(page.locator('.brand p')).toContainText('Niveau 2 · Pratique fiduciaire avancée');
   await expect(page.locator('#globalProgress')).toContainText('0 / 18');
   await expect(page.locator('#tabs button')).toHaveCount(18);
   await expect(page.locator('#tabs')).toBeHidden();
@@ -19,6 +20,7 @@ test('desktop: Level 2 exposes 18 dossiers through the scalable workbar and lock
   await expect(page.locator('#caseSelect')).toBeVisible();
   await expect(page.locator('#caseSelect option')).toHaveCount(18);
   await expect(page.locator('#uxCaseCount')).toContainText('1 / 18');
+  await expect(page.getByRole('button',{name:'Rubriques utiles'})).toBeVisible();
   await expect(page.locator('#startFinal')).toBeDisabled();
   await expect(page.locator('#finalEvaluation')).toContainText('Progression: 0/18');
 });
@@ -63,11 +65,13 @@ test('workbar previous/next and selector reach the professional dossiers',async(
   await expect(page.locator('#uxNextCase')).toBeDisabled();
 });
 
-test('mobile sticky workbar reaches the final control dossier and keeps the TVA form visible',async({page})=>{
+test('mobile compact dossier controls and sticky verify keep the final control dossier usable',async({page})=>{
   await page.setViewportSize({width:390,height:844});
   await clean(page);
   await expect(page.locator('#uxWorkbar')).toBeVisible();
   await expect(page.locator('#caseSelect')).toBeVisible();
+  await expect(page.locator('#uxMobileVerify')).toBeVisible();
+  await expect(page.locator('.ux-sidebar-toggle')).toBeVisible();
   await page.locator('#caseSelect').selectOption('17');
   await expect(page.locator('#sidebar')).toContainText('Fiduciaire Horizon');
   await expect(page.locator('#sidebar')).toContainText('grand livre, corrections et concordance');

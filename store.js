@@ -1,3 +1,4 @@
+import './legal-audit-2026-08.js';
 import './hardening.js';
 
 const STORAGE_KEY='tva_avance_v1_state';

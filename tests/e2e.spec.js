@@ -43,6 +43,17 @@ test('shared progress combines Level 1 and Level 2 into 36 effective practices',
   await page.addInitScript(({l1,l2})=>{localStorage.setItem('tva_effective_v2_state',JSON.stringify({records:l1}));localStorage.setItem('tva_avance_v1_state',JSON.stringify({records:l2}))},{l1:masteredRecords(4),l2:masteredRecords(5)});await page.goto('/');const bar=page.locator('#effectivePathProgress');await expect(bar).toContainText('Niveau 1 4/18');await expect(bar).toContainText('Niveau 2 5/18');await expect(bar).toContainText('Total 9/36')
 });
 
-test('18 mastered dossiers unlock a randomized 15-question final evaluation',async({page})=>{
-  await page.addInitScript(records=>{localStorage.setItem('tva_avance_v1_state',JSON.stringify({records}))},masteredRecords(18));await page.goto('/');await expect(page.locator('#globalProgress')).toContainText('18 / 18');await expect(page.locator('#startFinal')).toBeEnabled();await page.locator('#startFinal').click();await expect(page.locator('#avanceExamLayer')).toBeVisible();await expect(page.locator('#avanceExamLayer .exam-q')).toHaveCount(15);await expect(page.locator('#avanceExamLayer')).toContainText('12/15')
+test('18 mastered dossiers unlock a structured 15-question final evaluation',async({page})=>{
+  await page.addInitScript(records=>{localStorage.setItem('tva_avance_v1_state',JSON.stringify({records}))},masteredRecords(18));await page.goto('/');await expect(page.locator('#globalProgress')).toContainText('18 / 18');await expect(page.locator('#startFinal')).toBeEnabled();await page.locator('#startFinal').click();await expect(page.locator('#avanceExamLayer')).toBeVisible();await expect(page.locator('#avanceExamLayer .exam-q')).toHaveCount(15);await expect(page.locator('#avanceExamLayer')).toContainText('5 blocs de compétences');await expect(page.locator('#avanceExamLayer')).toContainText('12/15')
+});
+
+test('legacy random-exam pass does not grant the new blueprint attestation',async({page})=>{
+  await page.addInitScript(records=>{
+    localStorage.setItem('tva_avance_v1_state',JSON.stringify({records}));
+    localStorage.setItem('tva_avance_final_evaluation_v2',JSON.stringify({score:15,total:15,percent:100,passed:true,date:new Date().toISOString()}));
+  },masteredRecords(18));
+  await page.goto('/');
+  await expect(page.locator('#startFinal')).toBeEnabled();
+  await expect(page.locator('#openAttestation')).toHaveCount(0);
+  expect(await page.evaluate(()=>localStorage.getItem('tva_avance_final_evaluation_v3_blueprint'))).toBeNull();
 });

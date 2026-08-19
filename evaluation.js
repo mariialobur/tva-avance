@@ -9,7 +9,7 @@ const EXAM_BLUEPRINT=[
   {label:'International & acquisitions',count:3,ids:['form383','acqRegistered','acqDeduct','mix','import-vs-383-adv','dte-adv','acq-partial','fx-acq']},
   {label:'Impôt préalable & immobilier',count:3,ids:['option','ip405','ip415','ip410','immovable20']},
   {label:'Structures & opérations particulières',count:3,ids:['sub900','sub420','group','tdfnToEff','effToTdfn','related-value','netting']},
-  {label:'Rectification & concordance',count:3,ids:['concordance','isolatedCorrection','annualDifference','annual180','annual240','rectificationOnline']}
+  {label:'Rectification & concordance',count:3,ids:['concordance','isolatedCorrection','annualDifference','annual-differences']}
 ];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let attempt=null,lastResult=loadResult();

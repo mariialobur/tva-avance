@@ -6,8 +6,8 @@ const LEVEL_PLAN_GROUPS=[
   {title:'International, immobilier & financements',ids:['A','B','C']},
   {title:'Structures & changements de méthode',ids:['D','E','F']},
   {title:'Affectation, intégration & concordance',ids:['G','H','I']},
-  {title:'Dossier fiduciaire & international',ids:['J','K','L','M']},
-  {title:'Contrôle, valeur & clôture',ids:['N','O','P','Q','R']}
+  {title:'Déclarations complexes & international',ids:['J','K','L','M']},
+  {title:'Corrections, valeur & clôture',ids:['N','O','P','Q','R']}
 ];
 let planReturnFocus=null;
 
@@ -26,7 +26,7 @@ function placePathProgress(){
 }
 function compactChrome(){
   const disclaimer=$('.disclaimer');
-  if(disclaimer)disclaimer.innerHTML='<strong>Projet pédagogique indépendant.</strong> Non affilié à l’AFC · remise officielle via le Portail AFC · sources principales contrôlées le 17.08.2026.';
+  if(disclaimer)disclaimer.innerHTML='<strong>Projet pédagogique indépendant.</strong> Non affilié à l’AFC · remise officielle via le Portail AFC · sources principales contrôlées le 19.08.2026.';
   if(placePathProgress())return;
   const observer=new MutationObserver((_,obs)=>{if(placePathProgress())obs.disconnect()});
   observer.observe(document.body,{childList:true,subtree:true});
@@ -38,7 +38,7 @@ function patchIdentity(){
   if(mark){mark.className='brandmark';mark.textContent='TVA'}
   const h=$('.brand h1'),p=$('.brand p');
   if(h)h.textContent='TVA suisse — méthode effective';
-  if(p)p.textContent='Niveau 2 · Pratique fiduciaire avancée · analyser → déclarer → contrôler → documenter';
+  if(p)p.textContent='Niveau 2 · Déclarations avancées · analyser → déclarer → corriger → contrôler';
 }
 
 function patchControls(){
@@ -103,7 +103,7 @@ function openLevelPlan(){ensureLevelPlan();renderLevelPlan();const layer=$('#uxL
 function closeLevelPlan(){const layer=$('#uxLevelPlanLayer');if(!layer||layer.hidden)return;layer.hidden=true;document.body.classList.remove('ux-plan-opened');if(planReturnFocus&&document.contains(planReturnFocus))planReturnFocus.focus()}
 
 function enhanceSources(){const s=$('.sources');if(!s||s.dataset.uxReady)return;s.dataset.uxReady='1';s.classList.add('ux-sources','ux-collapsed');const btn=document.createElement('button');btn.type='button';btn.className='btn ux-sources-toggle';btn.textContent='Voir toutes les sources';btn.setAttribute('aria-expanded','false');btn.addEventListener('click',()=>{const collapsed=s.classList.toggle('ux-collapsed');btn.textContent=collapsed?'Voir toutes les sources':'Réduire les sources';btn.setAttribute('aria-expanded',String(!collapsed))});s.appendChild(btn)}
-function enhanceSidebar(){const sidebar=$('#sidebar');if(!sidebar)return;if(!sidebar.querySelector('.ux-sidebar-toggle')){const task=sidebar.querySelector('.task');const btn=document.createElement('button');btn.type='button';btn.className='btn ux-sidebar-toggle';btn.textContent='Afficher sources, risques et pièces';btn.setAttribute('aria-expanded','false');btn.addEventListener('click',()=>{const open=sidebar.classList.toggle('ux-details-open');btn.textContent=open?'Masquer sources, risques et pièces':'Afficher sources, risques et pièces';btn.setAttribute('aria-expanded',String(open))});task?.insertAdjacentElement('afterend',btn)}syncMobileVerify()}
+function enhanceSidebar(){const sidebar=$('#sidebar');if(!sidebar)return;if(!sidebar.querySelector('.ux-sidebar-toggle')){const task=sidebar.querySelector('.task');const btn=document.createElement('button');btn.type='button';btn.className='btn ux-sidebar-toggle';btn.textContent='Afficher sources et contrôles';btn.setAttribute('aria-expanded','false');btn.addEventListener('click',()=>{const open=sidebar.classList.toggle('ux-details-open');btn.textContent=open?'Masquer sources et contrôles':'Afficher sources et contrôles';btn.setAttribute('aria-expanded',String(open))});task?.insertAdjacentElement('afterend',btn)}syncMobileVerify()}
 function ensureMobileVerify(){if($('#uxMobileVerify'))return;const btn=document.createElement('button');btn.type='button';btn.id='uxMobileVerify';btn.className='ux-mobile-verify';btn.textContent='Vérifier mes réponses';btn.addEventListener('click',()=>$('#sidebar [data-verify]')?.click());document.body.appendChild(btn)}
 function syncMobileVerify(){ensureMobileVerify();const copy=$('#uxMobileVerify'),original=$('#sidebar [data-verify]');if(!copy)return;if(!original){copy.hidden=true;copy.classList.remove('is-visible');return}copy.hidden=false;copy.disabled=original.disabled;copy.textContent=original.textContent||'Vérifier mes réponses';const passed=window.innerWidth<=700&&original.getBoundingClientRect().bottom<0;copy.classList.toggle('is-visible',passed)}
 function observeSidebar(){const sidebar=$('#sidebar');if(!sidebar||sidebar.dataset.uxObserved)return;sidebar.dataset.uxObserved='1';new MutationObserver(()=>requestAnimationFrame(enhanceSidebar)).observe(sidebar,{childList:true});enhanceSidebar()}

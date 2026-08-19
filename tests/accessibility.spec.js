@@ -28,6 +28,20 @@ test('Level 2 plan dialog has no serious or critical automated WCAG violations',
   await scan(page);
 });
 
+test('Level 2 declaration correction dialog has no serious or critical automated WCAG violations',async({page})=>{
+  await page.goto('/');
+  await page.getByRole('button',{name:'Décompte à corriger'}).click();
+  await expect(page.getByRole('dialog',{name:'Exercice — Décompte à corriger'})).toBeVisible();
+  await scan(page);
+});
+
+test('Level 2 rectificatif/concordance dialog has no serious or critical automated WCAG violations',async({page})=>{
+  await page.goto('/');
+  await page.getByRole('button',{name:'Rectificatif / concordance'}).click();
+  await expect(page.getByRole('dialog',{name:'Exercice — Rectificatif / concordance'})).toBeVisible();
+  await scan(page);
+});
+
 test('mobile advanced working view has no serious or critical automated WCAG violations',async({page})=>{
   await page.setViewportSize({width:390,height:844});
   await page.goto('/');

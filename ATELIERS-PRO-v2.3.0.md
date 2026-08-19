@@ -1,66 +1,60 @@
-# Ateliers professionnels — v2.3.0
+# Exercices de synthèse — déclaration TVA · v2.3.1
 
 Date de revue: 19.08.2026.
 
-## Objet
+## Périmètre
 
-Le Niveau 2 conserve ses 18 dossiers évalués et son examen final structuré. La v2.3.0 ajoute deux **ateliers autonomes** qui ne modifient pas le compteur 18/18 et n’entrent pas dans l’attestation du niveau.
+Le Niveau 2 reste un **trainer de déclaration TVA**, pas un programme complet de revue fiduciaire. La v2.3.1 retire donc de ces exercices les tâches de collecte de pièces, d’audit documentaire et de fermeture de dossier.
 
-L’objectif est de rapprocher le parcours du travail réel en fiduciaire: revue d’un décompte préparé par un junior, contrôle des pièces, bouclement annuel, calcul des différences et choix de la procédure de correction.
+Les deux exercices complémentaires servent uniquement à:
 
-## Atelier 1 — Revue TVA
+1. corriger directement un décompte comportant des erreurs de rubriques / qualification;
+2. saisir les différences d’un rectificatif / d’une concordance et choisir la procédure correcte.
 
-Le scénario présente huit points de risque dans un décompte T3 2026:
+Ils restent hors compteur 18/18 et hors attestation.
 
-- subvention incluse à tort dans le ch. 200;
-- exportation sans déduction ch. 220;
-- prestation B2B fournie en France classée à tort au ch. 230;
-- service cloud étranger ignoré alors que les conditions factuelles du cas entraînent l’impôt sur les acquisitions;
-- DTe d’importation confondue avec le ch. 383;
-- location commerciale avec option comptée deux fois entre ch. 200 et 205;
-- réduction d’impôt préalable documentée omise au ch. 420;
-- erreur isolée T2 déplacée à tort dans T3 au lieu d’un décompte rectificatif de la période concernée.
+## Exercice 1 — Décompte à corriger
 
-Le participant doit également sélectionner les pièces pertinentes à demander: facture cloud et statut TVA du prestataire, DTe, bail / option, décision de subvention et calcul IP, grand livre / concordance et décompte T2.
+Huit points ciblés sont présentés avec tous les faits nécessaires. Le participant choisit la correction déclarative correcte:
 
-L’atelier comporte 15 contrôles et est réussi pédagogiquement dès 80 %. Le meilleur résultat est conservé sous `tva_avance_atelier_review_v1`.
+- subvention incluse à tort au ch. 200;
+- exportation sans ch. 220;
+- prestation B2B France mal classée au ch. 230 au lieu du ch. 221;
+- acquisition de service étranger omise au ch. 383;
+- TVA à l’importation / DTe confondue avec le ch. 383;
+- ch. 205 ajouté une seconde fois au chiffre d’affaires;
+- réduction d’IP ch. 420 omise;
+- erreur isolée T2 reportée à tort dans T3.
 
-## Atelier 2 — Bouclement & concordance annuelle
+Il n’y a plus de checklist de pièces à demander. Le score porte uniquement sur les huit corrections du décompte.
 
-Le scénario de clôture 2026 contient quatre écarts:
+## Exercice 2 — Rectificatif / concordance
 
-1. vente imposable d’un moyen d’exploitation omise: CHF 15’000 HT au taux normal;
-2. service cloud étranger CHF 10’000 HT soumis, selon les faits du cas, à l’impôt sur les acquisitions avec droit intégral à l’IP;
-3. DTe d’importation valable: CHF 1’200 d’IP non déduite;
-4. subvention CHF 25’000 correctement exclue du ch. 200 mais omise au ch. 900, avec réduction IP documentée de CHF 1’800 au ch. 420.
+Les écarts ont déjà été identifiés. Le participant saisit uniquement les **différences à reporter**:
 
-Différences attendues:
-
-- ch. 200: +CHF 15’000.00;
-- base ch. 303: +CHF 15’000.00;
-- ch. 383: base +CHF 10’000.00 / impôt +CHF 810.00;
-- ch. 399: +CHF 2’025.00;
-- ch. 400: +CHF 2’010.00;
-- ch. 420: +CHF 1’800.00;
-- ch. 479: +CHF 210.00;
+- différence ch. 200: CHF 15’000.00;
+- différence ch. 303: CHF 15’000.00;
+- différence ch. 383 base: CHF 10’000.00;
+- différence ch. 383 impôt: CHF 810.00;
+- différence ch. 399: CHF 2’025.00;
+- différence ch. 400: CHF 2’010.00;
+- différence ch. 420: CHF 1’800.00;
+- différence ch. 479: CHF 210.00;
 - différence nette en faveur de l’AFC: CHF 1’815.00;
-- ch. 900: +CHF 25’000.00.
+- différence ch. 900: CHF 25’000.00.
 
-Le participant doit en outre distinguer la concordance annuelle du décompte rectificatif d’une période isolée et retenir le garde-fou des 180 jours pour les erreurs découvertes lors de l’établissement des comptes annuels. L’atelier compte 13 contrôles et est réussi pédagogiquement dès 80 %. Le meilleur résultat est conservé sous `tva_avance_atelier_closing_v1`.
+Trois questions vérifient ensuite la différence entre rectificatif de période, concordance annuelle et garde-fou de finalisation.
 
 ## Sources principales
 
-- AFC — concordance annuelle: https://www.estv.admin.ch/fr/tva-concordance-annuelle
-- AFC — décompte rectificatif: https://www.estv.admin.ch/fr/tva-decompte-de-rectification
+- Prototype AFC — méthode effective: https://www.estv2.admin.ch/mwst/formulare/mwst-form-abr-muster-effektiv-fr.pdf
 - AFC — impôt sur les acquisitions: https://www.estv.admin.ch/fr/impot-sur-les-acquisitions-tva
 - AFC — DTe import/export: https://www.estv.admin.ch/fr/decisions-de-taxation-electroniques-de-la-douane
-- AFC — déroulement d’un contrôle TVA: https://www.estv.admin.ch/fr/deroulement-dun-controle-tva
-- AFC — documents nécessaires pour le contrôle TVA: https://www.estv.admin.ch/fr/documents-necessaires-pour-le-controle-tva
-- Prototype AFC — méthode effective: https://www.estv2.admin.ch/mwst/formulare/mwst-form-abr-muster-effektiv-fr.pdf
-- LTVA — Fedlex: https://www.fedlex.admin.ch/eli/cc/2009/615/fr
+- AFC — décompte rectificatif: https://www.estv.admin.ch/fr/tva-decompte-de-rectification
+- AFC — concordance annuelle: https://www.estv.admin.ch/fr/tva-concordance-annuelle
 
 ## QA
 
-`tests/atelier.spec.js` vérifie les deux launchers, la résolution complète de l’atelier Revue, la sélection des pièces, la résolution complète du bouclement et la réconciliation à CHF 1’815.00. Le smoke test exécute `node --check` sur les nouveaux modules et vérifie les clés de stockage et les garde-fous principaux.
+`tests/atelier.spec.js` vérifie que les deux exercices sont directement centrés sur la déclaration, qu’aucune étape de document-audit n’est présente, qu’une résolution correcte atteint 100 % et que la progression 18/18 reste inchangée.
 
-Le reset global du Niveau 2 efface également les résultats des deux ateliers.
+Les clés locales historiques sont conservées pour le reset global, avec un marqueur de scope afin qu’un ancien score des ateliers fiduciaires ne soit pas repris dans la nouvelle version simplifiée.

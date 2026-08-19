@@ -6,7 +6,8 @@ for(const file of ['app.js','evaluation.js','exam-blueprint.js','store.js','hard
 const html=fs.readFileSync('index.html','utf8');
 for(const token of ['app.js?v=2.0.0','evaluation.js?v=2.0.0','0 / 18 dossiers','Mémo professionnel — méthode effective · Niveau 2','Réflexe déclaration en 60 secondes','analyser les faits → déclarer → corriger → contrôler'])assert.ok(html.includes(token),`Missing token: ${token}`);
 const evalJs=fs.readFileSync('evaluation.js','utf8');
-for(const token of ['tva_avance_final_evaluation_v3_blueprint','ATTESTATION DE PARCOURS','Niveau 2','CASES.length','selectBlueprintQuestions','5 blocs de compétences'])assert.ok(evalJs.includes(token),`Missing evaluation token: ${token}`);
+for(const token of ['tva_avance_final_evaluation_v3_blueprint','ATTESTATION DE PARCOURS','Niveau 2','CASES.length','selectBlueprintQuestions','5 blocs de compétences','Formulaire & calcul','Rectification & concordance','remplissage et à la correction de déclarations TVA'])assert.ok(evalJs.includes(token),`Missing evaluation token: ${token}`);
+for(const forbidden of ['Grand livre & revue','audit du dossier','Pièces justificatives, audit du dossier'])assert.ok(!evalJs.includes(forbidden),`Legacy fiduciaire scope returned: ${forbidden}`);
 const storeJs=fs.readFileSync('store.js','utf8');
 assert.match(storeJs,/tva_avance_final_evaluation_v3_blueprint/);
 assert.match(storeJs,/atelier-loader\.js/);

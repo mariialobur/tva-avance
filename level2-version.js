@@ -1,6 +1,6 @@
-const VERSION='2.0.0';
-const REVIEW_DATE='17.08.2026';
-const FOOTER_TEXT=`Version ${VERSION} · 18 dossiers · revue fiscale ciblée et sources principales contrôlées le ${REVIEW_DATE}.`;
+const VERSION='2.3.1';
+const REVIEW_DATE='19.08.2026';
+const FOOTER_TEXT=`Version ${VERSION} · 18 dossiers · 2 exercices de synthèse déclaration · variantes contrôlées · sources principales contrôlées le ${REVIEW_DATE}.`;
 const ATTEST_TEXT=`Version du parcours ${VERSION} · sources principales contrôlées le ${REVIEW_DATE}`;
 
 function patchVersion(){

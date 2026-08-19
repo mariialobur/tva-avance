@@ -3,7 +3,7 @@ import { loadState } from './store.js';
 import { EXAM_SIZE, PASS_SCORE, PROJECT_URL, QUESTION_BANK } from './evaluation-data.js';
 import { selectBlueprintQuestions, shuffle } from './exam-blueprint.js';
 
-const STORAGE_KEY='tva_avance_final_evaluation_v2';
+const STORAGE_KEY='tva_avance_final_evaluation_v3_blueprint';
 const EXAM_BLUEPRINT=[
   {label:'Formulaire & rapprochement',count:3,ids:['form205','form230','form235','rates','ch299','ch479','balance','ledger200']},
   {label:'International & acquisitions',count:3,ids:['form383','acqRegistered','acqDeduct','mix','import-vs-383-adv','dte-adv','acq-partial','fx-acq']},

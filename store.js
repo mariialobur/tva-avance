@@ -3,9 +3,11 @@ import './legal-audit-2026-08.js';
 import './hardening.js';
 import './level2-version.js';
 import './effective-path-progress.js';
+import './atelier-loader.js';
 
 const STORAGE_KEY='tva_avance_v1_state';
 const FINAL_KEYS=['tva_avance_final_evaluation_v1','tva_avance_final_evaluation_v2','tva_avance_final_evaluation_v3_blueprint'];
+const ATELIER_KEYS=['tva_avance_atelier_review_v1','tva_avance_atelier_closing_v1'];
 const DEFAULT_STATE={version:1,caseIndex:0,view:'guided',mode:'learn',records:{},drafts:{}};
 function safeGet(k){try{return localStorage.getItem(k)}catch{return null}}
 function safeSet(k,v){try{localStorage.setItem(k,v)}catch{}}
@@ -23,6 +25,6 @@ export function loadState(){
   return structuredClone(DEFAULT_STATE);
 }
 export function saveState(s){safeSet(STORAGE_KEY,JSON.stringify(s))}
-export function clearState(){safeRemove(STORAGE_KEY);safeRemove('tva_av13');FINAL_KEYS.forEach(safeRemove)}
+export function clearState(){safeRemove(STORAGE_KEY);safeRemove('tva_av13');FINAL_KEYS.forEach(safeRemove);ATELIER_KEYS.forEach(safeRemove)}
 export function blankRecord(){return normalizeRecord({})}
 export function blankDraft(){return {values:{},qualification:'',assisted:false,submitted:false,correctionShown:false,lastScore:null}}

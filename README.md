@@ -12,7 +12,7 @@ Un parcours interactif en français pour **passer d’un cas TVA propre à un do
 [![Dossiers](https://img.shields.io/badge/dossiers-18-176c3a)](https://mariialobur.github.io/tva-avance/)
 [![Examen](https://img.shields.io/badge/examen-15%20questions%20·%2080%25-6552a3)](https://mariialobur.github.io/tva-avance/)
 [![QA](https://img.shields.io/badge/QA-smoke%20·%20unit%20·%20E2E%20·%20axe-506473)](https://github.com/mariialobur/tva-avance)
-[![Version](https://img.shields.io/badge/version-2.2.0-506473)](https://github.com/mariialobur/tva-avance)
+[![Version](https://img.shields.io/badge/version-2.3.0-506473)](https://github.com/mariialobur/tva-avance)
 
 ### 👉 [Ouvrir le Niveau 2 — pratique avancée](https://mariialobur.github.io/tva-avance/)
 
@@ -45,6 +45,7 @@ Il complète le [`Niveau 1 — Fondamentaux`](https://mariialobur.github.io/tva-
 | **3 modes** | Apprentissage · Entraînement · Évaluation |
 | **Méthode** | analyser → qualifier → reporter → contrôler → documenter |
 | **Plan du niveau** | carte des 18 dossiers par compétences avec statut réel |
+| **Ateliers professionnels** | revue d’un décompte junior + bouclement / concordance annuelle |
 | **Comptabilité** | grand livre, pièces, compensations, écritures et rapprochements |
 | **International** | lieu de prestation, acquisitions, importations, DTe et devises |
 | **Évaluation finale** | 15 questions · **5 blocs de compétences représentés** · seuil 12/15 |
@@ -132,6 +133,20 @@ Ces variantes sont complémentaires et ne gonflent pas artificiellement le compt
 
 ---
 
+## 🧾 Ateliers professionnels — Revue TVA & bouclement
+
+La v2.3.0 ajoute deux exercices de synthèse **hors compteur 18/18**.
+
+**Atelier Revue TVA.** Le participant reprend un décompte T3 préparé par un junior et doit contrôler huit risques: subvention incluse au ch. 200, export sans ch. 220, prestation à l’étranger mal classée, cloud étranger ignoré, DTe confondue avec le ch. 383, option immobilière comptée deux fois, réduction IP omise et erreur T2 déplacée dans T3. Une seconde étape oblige à sélectionner les pièces réellement nécessaires à la revue. L’atelier compte **15 contrôles**.
+
+**Atelier Bouclement & concordance.** À partir de quatre écarts de clôture, le participant calcule uniquement les **différences** à déclarer: ch. 200/303, acquisition ch. 383, IP ch. 400, réduction ch. 420, ch. 900 et différence nette. Le scénario se réconcilie sur une différence nette **CHF 1’815.00 en faveur de l’AFC**. Il faut aussi distinguer décompte rectificatif d’une période isolée, concordance annuelle et garde-fou des 180 jours. L’atelier compte **13 contrôles**.
+
+Les deux ateliers sont réussis pédagogiquement dès 80 %, conservent leur meilleur score localement et sont effacés par le reset global. Ils n’ouvrent pas l’attestation et ne modifient pas le gate de l’examen final.
+
+📄 [ATELIERS-PRO-v2.3.0.md](ATELIERS-PRO-v2.3.0.md)
+
+---
+
 ## 🧠 Évaluation finale structurée — Niveau 2
 
 L’examen se débloque après validation des **18/18 dossiers** à 100 % en mode Évaluation.
@@ -189,10 +204,10 @@ npm test
 Le Niveau 2 dispose de plusieurs filets de sécurité :
 
 - contrôle d’intégrité au runtime sur cases, rubriques, sources et arithmétique ;
-- smoke tests et contrôles de syntaxe ;
+- smoke tests et contrôles de syntaxe, y compris les modules ateliers ;
 - unit tests sur les 18 dossiers et la banque d’évaluation ;
 - test du **blueprint** final et de ses quotas thématiques ;
-- Playwright E2E desktop/mobile, Plan, progression, variantes et examen ;
+- Playwright E2E desktop/mobile, Plan, progression, variantes, examen et ateliers professionnels ;
 - axe accessibility ;
 - captures visuelles de référence pour détecter les régressions d’interface.
 
@@ -200,7 +215,7 @@ Le Niveau 2 dispose de plusieurs filets de sécurité :
 
 ## 🔒 Données et confidentialité
 
-Le site est statique HTML/CSS/JavaScript. Aucun compte ni base utilisateur n’est nécessaire. Progression, résultat final et nom de l’attestation restent dans le navigateur.
+Le site est statique HTML/CSS/JavaScript. Aucun compte ni base utilisateur n’est nécessaire. Progression, résultat final, scores des ateliers et nom de l’attestation restent dans le navigateur.
 
 ---
 
@@ -209,16 +224,16 @@ Le site est statique HTML/CSS/JavaScript. Aucun compte ni base utilisateur n’e
 | Étape | Projet | Rôle |
 | --- | --- | --- |
 | **01** | [Méthode effective — Niveau 1](https://mariialobur.github.io/tva-debutant/) | 18 cas pour les fondamentaux |
-| **02** | **Méthode effective — Niveau 2** | 18 dossiers pour revue, contrôle et pratique fiduciaire |
+| **02** | **Méthode effective — Niveau 2** | 18 dossiers + ateliers pour revue, contrôle et pratique fiduciaire |
 | **Spécialisation** | [Méthode TDFN](https://mariialobur.github.io/tva-tdfn/) | méthode de décompte distincte |
 
-La branche effective représente **36 pratiques évaluées** réparties sur deux niveaux, complétées par des variantes contrôlées.
+La branche effective représente **36 pratiques évaluées** réparties sur deux niveaux, complétées par des variantes contrôlées et trois ateliers autonomes au total.
 
 ---
 
 <div align="center">
 
-**Version 2.2.0 · 18 dossiers · évaluation structurée 15 questions · QA renforcé**
+**Version 2.3.0 · 18 dossiers · 2 ateliers professionnels · évaluation structurée 15 questions · QA renforcé**
 
 [Ouvrir le Niveau 1](https://mariialobur.github.io/tva-debutant/) · [Ouvrir le Niveau 2](https://mariialobur.github.io/tva-avance/) · [Ouvrir la spécialisation TDFN](https://mariialobur.github.io/tva-tdfn/)
 

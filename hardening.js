@@ -2,8 +2,8 @@ import { CASES, FIELD_META, SOURCE_LIBRARY } from './data.js';
 import { validateCaseArithmetic } from './logic.js';
 import { QUESTION_BANK, EXAM_SIZE } from './evaluation-data.js';
 
-const PARCOURS_VERSION='1.1.0';
-const REVIEW_DATE='17.08.2026';
+const PARCOURS_VERSION='2.3.1';
+const REVIEW_DATE='19.08.2026';
 
 function loadHardeningStyles(){
   if(document.querySelector('link[data-hardening-css]')) return;
@@ -21,13 +21,13 @@ function patchStaticCopy(){
   }
   const footerVersion=document.querySelector('footer span');
   if(footerVersion){
-    footerVersion.textContent=`Version ${PARCOURS_VERSION} · revue fiscale ciblée et sources principales contrôlées le ${REVIEW_DATE}.`;
+    footerVersion.textContent=`Version ${PARCOURS_VERSION} · 18 dossiers · 2 exercices de synthèse déclaration · variantes contrôlées · sources principales contrôlées le ${REVIEW_DATE}.`;
   }
   document.querySelectorAll('#memoDialog details').forEach(block=>{
     const summary=block.querySelector('summary');
     if(summary?.textContent.trim()==='Concordance annuelle et rectification'){
       const p=block.querySelector('p');
-      if(p) p.innerHTML='La concordance annuelle rapproche les décomptes et les comptes annuels. Une erreur isolée d’une période mensuelle, trimestrielle ou semestrielle se corrige au moyen du décompte rectificatif de la période concernée. Les erreurs constatées lors de l’établissement des comptes doivent être corrigées au plus tard dans la période de décompte pendant laquelle tombe le <strong>180e jour</strong> après la fin de l’exercice. Si aucun décompte rectificatif de concordance n’est parvenu à l’AFC dans les <strong>240 jours</strong>, l’AFC part du principe que les décomptes remis sont complets et corrects et que la période est finalisée. Le repère des 240 jours ne doit donc pas être compris comme une autorisation d’attendre pour corriger une erreur déjà identifiée.';
+      if(p) p.innerHTML='Une erreur isolée d’une période mensuelle, trimestrielle ou semestrielle se corrige au moyen du décompte rectificatif de la période concernée. Les différences identifiées lors de la finalisation annuelle sont reportées dans la concordance. Les erreurs constatées lors de l’établissement des comptes doivent être corrigées au plus tard dans la période de décompte pendant laquelle tombe le <strong>180e jour</strong> après la fin de l’exercice. Si aucun décompte rectificatif de concordance n’est parvenu à l’AFC dans les <strong>240 jours</strong>, l’AFC part du principe que les décomptes remis sont complets et corrects et que la période est finalisée. Le repère des 240 jours ne doit pas être compris comme une autorisation d’attendre pour corriger une erreur déjà identifiée.';
     }
   });
   const sources=document.querySelector('.sources');

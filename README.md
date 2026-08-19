@@ -2,9 +2,9 @@
 
 # 🇨🇭 TVA suisse — méthode effective · Niveau 2
 
-### Pratique avancée du décompte TVA suisse pour dossiers PME et fiduciaires
+### Pratique avancée du décompte TVA suisse
 
-Un parcours interactif en français pour **passer d’un cas TVA propre à un dossier qu’il faut analyser, rapprocher, corriger et documenter**.
+Un parcours interactif en français pour **remplir, corriger et contrôler des déclarations TVA plus complexes selon la méthode effective**.
 
 [![TVA suisse](https://img.shields.io/badge/TVA-Suisse-1f6b7a)](https://mariialobur.github.io/tva-avance/)
 [![Méthode](https://img.shields.io/badge/méthode-effective-145f82)](https://mariialobur.github.io/tva-avance/)
@@ -12,9 +12,9 @@ Un parcours interactif en français pour **passer d’un cas TVA propre à un do
 [![Dossiers](https://img.shields.io/badge/dossiers-18-176c3a)](https://mariialobur.github.io/tva-avance/)
 [![Examen](https://img.shields.io/badge/examen-15%20questions%20·%2080%25-6552a3)](https://mariialobur.github.io/tva-avance/)
 [![QA](https://img.shields.io/badge/QA-smoke%20·%20unit%20·%20E2E%20·%20axe-506473)](https://github.com/mariialobur/tva-avance)
-[![Version](https://img.shields.io/badge/version-2.3.0-506473)](https://github.com/mariialobur/tva-avance)
+[![Version](https://img.shields.io/badge/version-2.3.1-506473)](https://github.com/mariialobur/tva-avance)
 
-### 👉 [Ouvrir le Niveau 2 — pratique avancée](https://mariialobur.github.io/tva-avance/)
+### 👉 [Ouvrir le Niveau 2](https://mariialobur.github.io/tva-avance/)
 
 </div>
 
@@ -29,9 +29,9 @@ Un parcours interactif en français pour **passer d’un cas TVA propre à un do
 
 ## Pourquoi un Niveau 2 distinct ?
 
-Savoir remplir correctement un décompte simple ne suffit pas pour revoir un dossier en fiduciaire. Les difficultés apparaissent lorsque les données viennent de la comptabilité, que plusieurs mécanismes se croisent ou qu’une pièce manque : grand livre à rapprocher, prestation à l’étranger, achat importé, impôt sur les acquisitions, option immobilière, subvention, personne liée, compensation, correction d’impôt préalable ou concordance annuelle.
+Le Niveau 1 installe les mécanismes fondamentaux. Le Niveau 2 reste dans le même périmètre — **la déclaration TVA** — mais combine davantage de rubriques et de situations: opérations internationales, impôt sur les acquisitions, option immobilière, subventions, affectation mixte, changements de méthode, personnes liées, compensations, rectification et concordance annuelle.
 
-Le Niveau 2 travaille donc davantage le **raisonnement professionnel** : suivre une opération depuis la pièce ou le compte jusqu’au décompte, repérer une erreur préparée par quelqu’un d’autre, distinguer deux mécanismes proches et identifier les justificatifs nécessaires à une revue ou à un contrôle.
+L’objectif n’est pas de reproduire un cursus complet de fiduciaire. Les faits nécessaires sont fournis dans les exercices afin que le travail reste centré sur la question essentielle: **que faut-il déclarer, dans quelle rubrique et pour quel montant ?**
 
 Il complète le [`Niveau 1 — Fondamentaux`](https://mariialobur.github.io/tva-debutant/). La [`méthode TDFN`](https://mariialobur.github.io/tva-tdfn/) est une spécialisation distincte et non un «Niveau 3» de la méthode effective.
 
@@ -41,12 +41,11 @@ Il complète le [`Niveau 1 — Fondamentaux`](https://mariialobur.github.io/tva-
 
 | Élément | Contenu |
 | --- | --- |
-| **18 dossiers avancés** | international, immobilier, groupe TVA, IP, grand livre, audit et clôture |
+| **18 dossiers avancés** | déclarations complexes, international, immobilier, IP, corrections et concordance |
 | **3 modes** | Apprentissage · Entraînement · Évaluation |
-| **Méthode** | analyser → qualifier → reporter → contrôler → documenter |
+| **Méthode** | analyser les faits → qualifier → reporter → contrôler le décompte |
 | **Plan du niveau** | carte des 18 dossiers par compétences avec statut réel |
-| **Ateliers professionnels** | revue d’un décompte junior + bouclement / concordance annuelle |
-| **Comptabilité** | grand livre, pièces, compensations, écritures et rapprochements |
+| **2 exercices de synthèse** | décompte à corriger + rectificatif / concordance |
 | **International** | lieu de prestation, acquisitions, importations, DTe et devises |
 | **Évaluation finale** | 15 questions · **5 blocs de compétences représentés** · seuil 12/15 |
 | **Attestation** | 2 pages générées localement après validation des 18 dossiers |
@@ -61,65 +60,57 @@ Il complète le [`Niveau 1 — Fondamentaux`](https://mariialobur.github.io/tva-
 | **A** | SaaS étranger | acquisitions ch. 383 et droit à déduction |
 | **B** | Immobilier à usages mixtes | option, ch. 205/230 et correction IP |
 | **C** | Subvention + sponsoring | contre-prestation, ch. 900 et réduction 420 |
-| **D** | Groupe TVA | périmètre et flux internes |
+| **D** | Groupe TVA | traitement déclaratif des flux internes |
 | **E** | TDFN → effective | valeur résiduelle et ch. 410 |
 | **F** | Effective → TDFN | valeur résiduelle et ch. 415 |
 | **G** | Activités mixtes | santé, étranger, taux multiples et affectation |
-| **H** | Intégrateur | décompte complexe multi-mécanismes |
-| **I** | Concordance annuelle | rapprochement et rectification |
-| **J** | Grand livre → décompte | reconstruire le ch. 200 depuis les comptes |
-| **K** | Audit du junior | détecter et corriger un décompte mal préparé |
+| **H** | Décompte multi-mécanismes | combinaison de plusieurs rubriques |
+| **I** | Concordance annuelle | différences et rectification |
+| **J** | Données comptables → décompte | reconstruire le ch. 200 et les déductions |
+| **K** | Décompte à corriger | détecter et corriger des rubriques erronées |
 | **L** | Import + acquisition | TVA à l’importation, DTe et ch. 383 |
 | **M** | Acquisition + activité mixte | impôt dû intégral vs IP partiellement déductible |
 | **N** | Devise + ch. 383 | conversion EUR/CHF et acquisition tax |
 | **O** | Personne liée | valeur entre tiers indépendants |
 | **P** | Compensation de créances | prestations réciproques vs paiement net |
 | **Q** | Immeuble · changement | valeur résiduelle immobilière |
-| **R** | Contrôle annuel complet | grand livre, IP, subvention, corrections et concordance |
+| **R** | Déclaration annuelle complexe | corrections, IP, subvention et concordance |
 
-Chaque dossier contient des hypothèses factuelles explicites. Un traitement correct dans un scénario ne doit pas être transformé en règle générale lorsque la réponse dépend du lieu, du statut du fournisseur, de l’affectation, de la relation entre parties ou des preuves disponibles.
+Chaque dossier contient les **hypothèses nécessaires à la déclaration**. Un traitement correct dans un scénario ne doit pas être transformé en règle générale lorsque la réponse dépend du lieu, du statut du fournisseur, de l’affectation ou de la relation entre parties.
 
 ---
 
 ## 🧭 Plan du niveau
 
-Le bouton **Plan** donne une vue d’ensemble des 18 dossiers, regroupés par compétences professionnelles. Les cartes affichent l’état réel du travail :
+Le bouton **Plan** donne une vue d’ensemble des 18 dossiers et de leur état réel:
 
 `À faire` · `En cours` · `Maîtrisé ✓`
 
-La carte permet de revenir directement à une compétence précise — international, immobilier, contrôle, changements de méthode, revue fiduciaire — sans parcourir les dossiers un par un. La vue est adaptée au mobile.
+La carte permet de revenir directement à international, immobilier, changements de méthode, corrections ou concordance sans parcourir les dossiers un par un. La vue est adaptée au mobile.
 
 ---
 
-## ✨ Ce que le Niveau 2 entraîne réellement
+## ✨ Ce que le Niveau 2 entraîne
 
-### `1` Grand livre → décompte
+### `1` Remplir une déclaration complexe
 
-Les dossiers J et R rapprochent les comptes de produits, les déductions, l’impôt préalable et les rubriques déclaratives. L’objectif est de reconstruire le fil **pièce → écriture → compte → rubrique TVA → décompte**.
+Le participant doit faire correspondre les faits aux rubriques 200–299, 303/313/343/383, 400/405/410/415/420 et au solde final.
 
-### `2` Revue du travail d’un autre préparateur
+### `2` Corriger une déclaration erronée
 
-Le dossier K part d’un décompte mal préparé par un junior : il faut identifier l’erreur de raisonnement avant de corriger les chiffres.
+Plusieurs exercices montrent une rubrique fausse ou omise puis demandent la correction directe, sans transformer l’exercice en audit documentaire.
 
 ### `3` International sans raccourci
 
-Exportation, prestation fournie à l’étranger, importation physique et acquisition de service étranger sont traitées séparément. DTe, ch. 383 et devises apparaissent dans des dossiers différents puis combinés.
+Exportation, prestation fournie à l’étranger, importation physique et acquisition de service étranger sont traitées séparément. DTe, ch. 383 et devises ne sont pas interchangeables.
 
 ### `4` Impôt dû ≠ droit à l’IP
 
-Le dossier M impose de déclarer intégralement une acquisition étrangère tout en limitant la déduction selon une affectation documentée. Le parcours force ainsi à séparer **obligation d’imposer** et **droit à déduire**.
+Le dossier M impose de déclarer intégralement une acquisition étrangère tout en limitant la déduction selon l’affectation donnée dans le scénario.
 
-### `5` Personnes liées et compensations
+### `5` Rectification et concordance
 
-Les dossiers O et P montrent pourquoi le prix facturé ou le flux de trésorerie net ne suffisent pas toujours pour déterminer la base TVA.
-
-### `6` Immobilier et valeur résiduelle
-
-Option, affectation mixte et changement durable d’utilisation sont travaillés sur plusieurs dossiers avec une logique de documentation plutôt qu’un pourcentage automatique.
-
-### `7` Pièces et contrôles métier
-
-Contrats, factures, décisions de subvention, DTe, preuves du lieu de prestation, tableaux d’affectation, valeurs résiduelles, grand livre et concordances apparaissent comme éléments à conserver ou demander lors d’une revue.
+Le niveau distingue l’erreur d’une période à corriger par décompte rectificatif des différences identifiées lors de la concordance annuelle.
 
 ---
 
@@ -127,23 +118,23 @@ Contrats, factures, décisions de subvention, DTe, preuves du lieu de prestation
 
 Certaines situations comportent des **variantes contrôlées** où un seul fait déterminant change. Exemple : fournisseur étranger non inscrit à la TVA suisse vs fournisseur déjà inscrit.
 
-Le but est d’éviter l’apprentissage d’un raccourci du type `SaaS étranger = toujours ch. 383`. La bonne réponse doit découler des faits et de la qualification, pas du nom de l’opération.
+Le but est d’éviter l’apprentissage d’un raccourci du type `SaaS étranger = toujours ch. 383`. La bonne réponse doit découler des faits et de la qualification.
 
 Ces variantes sont complémentaires et ne gonflent pas artificiellement le compteur des 18 dossiers.
 
 ---
 
-## 🧾 Ateliers professionnels — Revue TVA & bouclement
+## 🧾 Exercices de synthèse — déclaration
 
-La v2.3.0 ajoute deux exercices de synthèse **hors compteur 18/18**.
+La v2.3.1 réduit volontairement les anciens ateliers «fiduciaire» pour rester dans le périmètre du trainer.
 
-**Atelier Revue TVA.** Le participant reprend un décompte T3 préparé par un junior et doit contrôler huit risques: subvention incluse au ch. 200, export sans ch. 220, prestation à l’étranger mal classée, cloud étranger ignoré, DTe confondue avec le ch. 383, option immobilière comptée deux fois, réduction IP omise et erreur T2 déplacée dans T3. Une seconde étape oblige à sélectionner les pièces réellement nécessaires à la revue. L’atelier compte **15 contrôles**.
+**Décompte à corriger.** Huit erreurs déclaratives sont présentées avec tous les faits nécessaires: subvention au ch. 200, exportation sans ch. 220, prestation à l’étranger mal classée, acquisition ch. 383 omise, DTe confondue avec l’impôt sur les acquisitions, ch. 205 compté deux fois, réduction ch. 420 omise et erreur T2 reportée dans T3. Il n’y a plus de checklist de pièces à demander.
 
-**Atelier Bouclement & concordance.** À partir de quatre écarts de clôture, le participant calcule uniquement les **différences** à déclarer: ch. 200/303, acquisition ch. 383, IP ch. 400, réduction ch. 420, ch. 900 et différence nette. Le scénario se réconcilie sur une différence nette **CHF 1’815.00 en faveur de l’AFC**. Il faut aussi distinguer décompte rectificatif d’une période isolée, concordance annuelle et garde-fou des 180 jours. L’atelier compte **13 contrôles**.
+**Rectificatif / concordance.** Les écarts sont déjà identifiés. Le participant saisit directement les différences dans les rubriques concernées puis choisit la bonne procédure. Le scénario se réconcilie sur une différence nette **CHF 1’815.00 en faveur de l’AFC**.
 
-Les deux ateliers sont réussis pédagogiquement dès 80 %, conservent leur meilleur score localement et sont effacés par le reset global. Ils n’ouvrent pas l’attestation et ne modifient pas le gate de l’examen final.
+Les deux exercices sont hors attestation et ne modifient pas le gate 18/18.
 
-📄 [ATELIERS-PRO-v2.3.0.md](ATELIERS-PRO-v2.3.0.md)
+📄 [Documentation des exercices](ATELIERS-PRO-v2.3.0.md)
 
 ---
 
@@ -151,7 +142,7 @@ Les deux ateliers sont réussis pédagogiquement dès 80 %, conservent leur meil
 
 L’examen se débloque après validation des **18/18 dossiers** à 100 % en mode Évaluation.
 
-Le tirage reste aléatoire, mais suit désormais un **blueprint de compétences**. Chaque tentative contient exactement trois questions dans chacun des cinq blocs :
+Le tirage reste aléatoire mais suit un **blueprint de compétences**. Chaque tentative contient exactement trois questions dans chacun des cinq blocs:
 
 | Bloc | Questions |
 | --- | ---: |
@@ -162,7 +153,7 @@ Le tirage reste aléatoire, mais suit désormais un **blueprint de compétences*
 | Contrôle, rectification & clôture | 3 |
 | **Total** | **15** |
 
-Le seuil est **12/15 (80 %)**. Toutes les réponses doivent être fournies. Les options sont mélangées, les explications et sources ne deviennent visibles qu’après remise, et chaque nouvelle tentative renouvelle les questions **à l’intérieur des mêmes quotas thématiques**.
+Le seuil est **12/15 (80 %)**. Les explications et sources ne deviennent visibles qu’après remise.
 
 > [!NOTE]
 > Cette auto-évaluation mesure la réussite dans le périmètre du projet et ne constitue pas une certification professionnelle générale des compétences en TVA.
@@ -171,9 +162,7 @@ Le seuil est **12/15 (80 %)**. Toutes les réponses doivent être fournies. Les 
 
 ## 📄 Attestation
 
-Après les 18 dossiers et l’évaluation structurée, une attestation en deux pages peut être générée localement : résultat sur la première page et relevé des thèmes sur la seconde.
-
-Le document décrit notamment grand livre/revue, international, impôt préalable, immobilier, financements, personnes liées, changements de méthode et contrôle de clôture.
+Après les 18 dossiers et l’évaluation structurée, une attestation en deux pages peut être générée localement. Elle atteste uniquement la réussite du parcours de déclaration proposé par ce projet.
 
 > [!CAUTION]
 > Cette attestation ne constitue ni un diplôme, ni un titre professionnel, ni une certification reconnue ou accréditée. L’identité n’est pas vérifiée et aucun registre public des résultats n’est tenu.
@@ -182,13 +171,10 @@ Le document décrit notamment grand livre/revue, international, impôt préalabl
 
 ## ⚖️ Référentiel et audits
 
-Le parcours s’appuie en priorité sur **LTVA**, **OTVA**, le prototype AFC du décompte effectif et les publications AFC relatives aux taux, acquisitions, importations/DTe, devises, contrôle TVA, changements de méthode, rectifications et concordance.
-
-Les projets législatifs ou projets de pratique en consultation ne sont pas présentés comme du droit applicable avant leur entrée en vigueur ou publication définitive.
+Le parcours s’appuie en priorité sur **LTVA**, **OTVA**, le prototype AFC du décompte effectif et les publications AFC relatives aux taux, acquisitions, importations/DTe, devises, changements de méthode, rectifications et concordance.
 
 📄 [LEGAL-REVIEW-2026-08-17.md](LEGAL-REVIEW-2026-08-17.md)  
 📄 [LEVEL2-EXTENSION-REVIEW-2026-08-17.md](LEVEL2-EXTENSION-REVIEW-2026-08-17.md)  
-📄 [AUDIT-EXPERT-v1.1.0.md](AUDIT-EXPERT-v1.1.0.md)  
 📄 [AUDIT-FISCAL-2026-08-17.md](AUDIT-FISCAL-2026-08-17.md)  
 📄 [UX-REVIEW-2026-08-17.md](UX-REVIEW-2026-08-17.md)
 
@@ -201,21 +187,20 @@ npm install
 npm test
 ```
 
-Le Niveau 2 dispose de plusieurs filets de sécurité :
+Le filet de sécurité comprend notamment:
 
-- contrôle d’intégrité au runtime sur cases, rubriques, sources et arithmétique ;
-- smoke tests et contrôles de syntaxe, y compris les modules ateliers ;
-- unit tests sur les 18 dossiers et la banque d’évaluation ;
-- test du **blueprint** final et de ses quotas thématiques ;
-- Playwright E2E desktop/mobile, Plan, progression, variantes, examen et ateliers professionnels ;
-- axe accessibility ;
-- captures visuelles de référence pour détecter les régressions d’interface.
+- contrôle d’intégrité des cas, rubriques, sources et calculs;
+- smoke + unit tests;
+- test du blueprint final;
+- Playwright E2E desktop/mobile, Plan, progression, variantes, examen et deux exercices de déclaration;
+- axe accessibility;
+- captures visuelles de référence.
 
 ---
 
 ## 🔒 Données et confidentialité
 
-Le site est statique HTML/CSS/JavaScript. Aucun compte ni base utilisateur n’est nécessaire. Progression, résultat final, scores des ateliers et nom de l’attestation restent dans le navigateur.
+Le site est statique HTML/CSS/JavaScript. Progression, résultat final, scores des exercices et nom de l’attestation restent dans le navigateur.
 
 ---
 
@@ -223,17 +208,15 @@ Le site est statique HTML/CSS/JavaScript. Aucun compte ni base utilisateur n’e
 
 | Étape | Projet | Rôle |
 | --- | --- | --- |
-| **01** | [Méthode effective — Niveau 1](https://mariialobur.github.io/tva-debutant/) | 18 cas pour les fondamentaux |
-| **02** | **Méthode effective — Niveau 2** | 18 dossiers + ateliers pour revue, contrôle et pratique fiduciaire |
+| **01** | [Méthode effective — Niveau 1](https://mariialobur.github.io/tva-debutant/) | fondamentaux de la déclaration |
+| **02** | **Méthode effective — Niveau 2** | déclarations complexes, corrections et concordance |
 | **Spécialisation** | [Méthode TDFN](https://mariialobur.github.io/tva-tdfn/) | méthode de décompte distincte |
-
-La branche effective représente **36 pratiques évaluées** réparties sur deux niveaux, complétées par des variantes contrôlées et trois ateliers autonomes au total.
 
 ---
 
 <div align="center">
 
-**Version 2.3.0 · 18 dossiers · 2 ateliers professionnels · évaluation structurée 15 questions · QA renforcé**
+**Version 2.3.1 · 18 dossiers · 2 exercices de synthèse déclaration · évaluation structurée 15 questions · QA renforcé**
 
 [Ouvrir le Niveau 1](https://mariialobur.github.io/tva-debutant/) · [Ouvrir le Niveau 2](https://mariialobur.github.io/tva-avance/) · [Ouvrir la spécialisation TDFN](https://mariialobur.github.io/tva-tdfn/)
 
